@@ -22,6 +22,7 @@
 #include <mntent.h>
 #include <sys/mount.h>
 #include <sys/param.h>
+#include <paths.h>
 #endif /* __SOLARIS__ */
 
 #ifdef __SOLARIS__

@@ -75,6 +75,10 @@
 #include "realpath.h"
 #include "misc.h"
 
+#define MOUNTED "/etc/mtab"
+#define setmntent(f,m) fopen(f,m)
+#define endmntent(f) fclose(f)
+
 const char *ntfs_home = 
 "News, support and information:  http://tuxera.com\n";
 

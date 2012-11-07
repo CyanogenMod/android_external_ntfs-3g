@@ -2315,8 +2315,8 @@ static int ntfs_get_perm(struct SECURITY_CONTEXT *scx,
 	}
 	return (perm);
 }
+#endif
 
-#endif /* POSIXACLS */
 
 /*
  *		Get an NTFS ACL
@@ -3325,6 +3325,7 @@ int ntfs_allowed_access(struct SECURITY_CONTEXT *scx,
 		ntfs_inode *ni,
 		int accesstype) /* access type required (S_Ixxx values) */
 {
+#if 0
 	int perm;
 	int res;
 	int allow;
@@ -3393,6 +3394,8 @@ int ntfs_allowed_access(struct SECURITY_CONTEXT *scx,
 			allow = 0;
 	}
 	return (allow);
+#endif
+	return 1;
 }
 
 /*

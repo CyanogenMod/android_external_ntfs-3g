@@ -33,12 +33,16 @@
 #include <sys/mount.h>
 #include <sys/socket.h>
 #include <sys/utsname.h>
+#include <paths.h>
 
 #define FUSE_DEV_NEW "/dev/fuse"
 
 #ifndef MS_DIRSYNC
 #define MS_DIRSYNC 128
 #endif
+
+#define setmntent(f,m) fopen(f,m)
+#define endmntent(f) fclose(f)
 
 static const char *progname = "ntfs-3g-mount";
 
