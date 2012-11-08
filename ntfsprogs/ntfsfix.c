@@ -1587,6 +1587,12 @@ int main(int argc, char **argv)
 				ntfs_log_info("No change made\n");
 			exit(1);
 		}
+		/* with -n option, the errors can be fixed,
+		 * but we still would not be able to mount ntfs
+		 * here without broken bootsector. So we just exit.
+		 */
+		if (opt.no_action)
+			exit(0);
 		vol = ntfs_mount(opt.volume, 0);
 		if (!vol) {
 			ntfs_log_perror("Remount failed");

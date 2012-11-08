@@ -43,3 +43,16 @@ LOCAL_MODULE_TAGS := eng
 LOCAL_SYSTEM_SHARED_LIBRARIES := libc
 LOCAL_STATIC_LIBRARIES := libfuse libntfs-3g
 include $(BUILD_EXECUTABLE)
+
+# ntfsprogs - ntfsfix
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := ntfsprogs/ntfsfix.c ntfsprogs/utils.c
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/include/fuse-lite $(LOCAL_PATH)/include/ntfs-3g \
+			$(LOCAL_PATH)/androidglue/include $(LOCAL_PATH)/ntfsprogs/
+LOCAL_CFLAGS := -O2 -g -W -Wall -D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64 -DHAVE_CONFIG_H
+LOCAL_MODULE := ntfsfix
+LOCAL_MODULE_TAGS := eng
+LOCAL_SYSTEM_SHARED_LIBRARIES := libc
+LOCAL_STATIC_LIBRARIES := libfuse libntfs-3g
+include $(BUILD_EXECUTABLE)
