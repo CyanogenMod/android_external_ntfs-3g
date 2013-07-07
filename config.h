@@ -13,7 +13,7 @@
 
 /* Define this to 1 if you want to enable generation of DCE compliant UUIDs.
    */
-#define ENABLE_UUID 1
+/* #define ENABLE_UUID 1 */
 
 /* Define to 1 if using internal fuse */
 #define FUSE_INTERNAL 1
