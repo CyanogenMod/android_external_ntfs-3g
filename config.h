@@ -358,11 +358,5 @@
 /* #undef inline */
 #endif
 
-/* Define to `long int' if <sys/types.h> does not define. */
-#ifndef _OFF_T_DEFINED_
-#define _OFF_T_DEFINED_
-typedef long long off_t;
-#endif
-
 /* Define to `unsigned int' if <sys/types.h> does not define. */
 /* #undef size_t */
