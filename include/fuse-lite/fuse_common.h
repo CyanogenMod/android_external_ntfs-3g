@@ -32,6 +32,10 @@
 #define FUSE_MAKE_VERSION(maj, min)  ((maj) * 10 + (min))
 #define FUSE_VERSION FUSE_MAKE_VERSION(FUSE_MAJOR_VERSION, FUSE_MINOR_VERSION)
 
+#if defined(__BIONIC__) && defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64
+#define off_t off64_t
+#endif
+
 /* This interface uses 64 bit off_t */
 #if defined(__SOLARIS__) && !defined(__x86_64__) && (_FILE_OFFSET_BITS != 64)
 #error Please add -D_FILE_OFFSET_BITS=64 to your compile flags!

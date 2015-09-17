@@ -655,6 +655,10 @@ struct group {
 	gid_t gr_gid;
 } ;
 
+#if defined(__BIONIC__) && defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64
+#define off_t off64_t
+#endif
+
 typedef int (*FILEREADER)(void *fileid, char *buf, size_t size, off_t pos);
 
 /*

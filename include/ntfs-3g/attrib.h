@@ -360,6 +360,10 @@ extern int ntfs_attr_truncate_solid(ntfs_attr *na, const s64 newsize);
  */
 extern s64 ntfs_get_attribute_value_length(const ATTR_RECORD *a);
 
+#if defined(__BIONIC__) && defined(_FILE_OFFSET_BITS) && _FILE_OFFSET_BITS == 64
+#define off_t off64_t
+#endif
+
 /**
  * get_attribute_value - return the attribute value of an attribute
  * @vol:	volume on which the attribute is present
