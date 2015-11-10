@@ -50,7 +50,6 @@ LOCAL_CFLAGS := $(common_cflags) -Dmain=mount_ntfs3g_main
 LOCAL_SRC_FILES := $(ntfs-3g_src_files)
 LOCAL_MODULE := libntfs3g_mount_static
 LOCAL_MODULE_TAGS := eng
-LOCAL_STATIC_LIBRARIES := libfuse libntfs-3g
 include $(BUILD_STATIC_LIBRARY)
 
 
@@ -72,7 +71,6 @@ LOCAL_C_INCLUDES := $(common_c_includes) $(LOCAL_PATH)/ntfsprogs
 LOCAL_CFLAGS := $(common_cflags) -Dmain=fsck_ntfs3g_main
 LOCAL_MODULE := libntfs3g_fsck_static
 LOCAL_MODULE_TAGS := eng
-LOCAL_STATIC_LIBRARIES := libext2_uuid libfuse libntfs-3g
 include $(BUILD_STATIC_LIBRARY)
 
 
@@ -96,5 +94,4 @@ LOCAL_C_INCLUDES := $(common_c_includes) $(LOCAL_PATH)/ntfsprogs \
 LOCAL_CFLAGS := $(common_cflags) -Dmain=mkfs_ntfs3g_main
 LOCAL_MODULE := libntfs3g_mkfs_main
 LOCAL_MODULE_TAGS := eng
-LOCAL_STATIC_LIBRARIES := libfuse libntfs-3g
 include $(BUILD_STATIC_LIBRARY)
