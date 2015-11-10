@@ -31,6 +31,7 @@ char *ntfs_realpath(const char *path, char *resolved_path)
 }
 #endif
 
+
 #ifdef linux
 
 /*
